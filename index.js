@@ -6,7 +6,7 @@ const functions = require('firebase-functions');
 const quotes = {
   "1": {
     file: "goneww.wav",
-    phrase: "Frankly, my dear, I don't give a damn.",
+    phrase: "Frankly, my dear, I don't give a damn",
     movie: "GONE WITH THE WIND, MGM, 1939",
     character: "RHETT BUTLER",
     actor: "Clark Gable"
@@ -27,7 +27,7 @@ const quotes = {
   },
   "4": {
     file: "wizardofoz.wav",
-    phrase: "Toto, I've",
+    phrase: "Toto, I've (got) a feeling we're not in Kansas anymore",
     movie: "THE WIZARD OF OZ, MGM, 1939",
     character: "DOROTHY GALE",
     actor: "Judy Garland"
@@ -728,7 +728,7 @@ function randomQuote(quotesVariants, myFilter = []) {
     // We don't have a filter
     if (myFilter.length === 0) {
       const randPair = randomKeyPair(quotesVariants);
-      return `<speak><audio src="https://iuriid.github.io/public/img/BestMovieQuotesWAVs/${randPair.file}">${randPair.phrase} - ${randPair.character} (${randPair.actor} - ${randPair.movie})</audio></speak>`;
+      return `<speak><audio src="https://iuriid.github.io/public/img/BestMovieQuotesWAVs/${randPair.file}">${randPair.phrase} - ${randPair.character} (${randPair.actor}) - ${randPair.movie}</audio></speak>`;
     } else {
       // We have a filter
       const filteredQuotes = {};
@@ -736,13 +736,13 @@ function randomQuote(quotesVariants, myFilter = []) {
         filteredQuotes[key] = quotes[key];
       });      
       const randPair = randomKeyPair(filteredQuotes);
-      return `<speak><audio src="https://iuriid.github.io/public/img/BestMovieQuotesWAVs/${randPair.file}">${randPair.phrase} - ${randPair.character} (${randPair.actor} - ${randPair.movie})</audio></speak>`;
+      return `<speak><audio src="https://iuriid.github.io/public/img/BestMovieQuotesWAVs/${randPair.file}">${randPair.phrase} - ${randPair.character} (${randPair.actor}) - ${randPair.movie}</audio></speak>`;
     }
   }
 
   // Quotes object has the only quote
   const theOnlyQuote = quotesVariants[Object.keys(quotesVariants)[0]];
-  return `<speak><audio src="https://iuriid.github.io/public/img/BestMovieQuotesWAVs/${theOnlyQuote.file}">${theOnlyQuote.phrase} - ${theOnlyQuote.character} (${theOnlyQuote.actor} - ${theOnlyQuote.movie})</audio></speak>`;
+  return `<speak><audio src="https://iuriid.github.io/public/img/BestMovieQuotesWAVs/${theOnlyQuote.file}">${theOnlyQuote.phrase} - ${theOnlyQuote.character} (${theOnlyQuote.actor}) - ${theOnlyQuote.movie}</audio></speak>`;
 }
 
 
