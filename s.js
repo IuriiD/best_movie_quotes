@@ -676,6 +676,7 @@ const parse3 = ['1. RHETT BUTLER (Clark Gable): <b>&quot;Frankly,my dear, I don\
 /*const parse4 = parse3.map(str => str.replace("   ", ""));
 console.log(parse4);
 */
+/*
 const somestr1 ='1. RHETT BUTLER (Clark Gable): <b>&quot;Frankly,my dear, I don\'t give a damn.&quot; </b><br />  <img border="0" width="14" height="10" align="bottom" src="redstar.gif" /> <a href="gone.html"><i>GONE             WITH THE WIND</i></a>, MGM, 1939<br />  Play clip (excerpt): <a href="wavfiles/goneww.wav"><img src="wavfiles/sound.gif" width="24" height="24" border="0" align="absmiddle" alt="Gone With the Wind" /></a><i> </i> </font></p>  ';
 const somestr2 = '2. VITO CORLEONE (Marlon Brando): <b>&quot;I\'m going to make him an offer he can\'t refuse.&quot;</b><br /> <img border="0" width="14" height="10" align="bottom" src="redstar.gif" /> <a href="godf.html"><i>THE                 GODFATHER</i></a>, Paramount, 1972<br />    Play clip (excerpt): <a href="wavfiles/godfather.wav"><img src="wavfiles/sound.gif" width="24" height="24" border="0" align="absmiddle" alt="The Godfather" /></a><i> </i> </font></p>';
 const somestr3 = '3. </font><font size="2">TERRY MALLOY (Marlon Brando): <b>&quot;You don\'t understand! I could\'ve had class. I could\'ve been a contender. I could\'ve been somebody, instead of a bum, which       is what I am.&quot;</b> <br />    <img border="0" width="14" height="10" align="bottom" src="redstar.gif" /> <a href="onth.html"><i>ON                  THE WATERFRONT</i></a>, Columbia, 1954<br />    Play clip (excerpt): <a href="wavfiles/onwaterfront.wav"><img src="wavfiles/sound.gif" width="24" height="24" border="0" align="absmiddle" alt="On the Waterfront" /></a> </font></p> ';
@@ -843,3 +844,1277 @@ wavs.forEach(vaw => {
   });
 });
 */
+const wavs = ['goneww.wav',
+  'godfather.wav',
+  'onwaterfront.wav',
+  'wizardofoz.wav',
+  'casablanca.wav',
+  'suddenimpact.wav',
+  'sunsetblvd.wav',
+  'starwars.wav',
+  'allabouteve.wav',
+  'taxid.wav',
+  'coolhandluke.wav',
+  'apocalypsenow.wav',
+  'lovestory.wav',
+  'maltesefalcon.wav',
+  'etth.wav',
+  'intheheat.wav',
+  'citizenkane.wav',
+  'whiteheat.wav',
+  'network.wav',
+  'casablanca5.wav',
+  'silenceoflambs.wav',
+  'drno.wav',
+  'wizardofoz2.wav',
+  'sunsetblvd2.wav',
+  'jerrymaguire.wav',
+  'shedonehimwr.wav',
+  'midnightcowboy.wav',
+  'casablanca3.wav',
+  'fewgoodmen.wav',
+  'grandhotel.wav',
+  'goneww2.wav',
+  'casablanca6.wav',
+  'whenharrymetsally.wav',
+  'tohaveandhavenot.wav',
+  'jaws.wav',
+  'treasuresm.wav',
+  'terminator.wav',
+  'prideoftheyankees.wav',
+  'fieldofd.wav',
+  'forrestg.wav',
+  'bonnieclyde.wav',
+  'graduate5.wav',
+  'casablanca7.wav',
+  'sixthsense.wav',
+  'streetcardesire.wav',
+  'nowvoyager.wav',
+  'shane4.wav',
+  'somelike.wav',
+  'frankenstein.wav',
+  'apollo13.wav',
+  'dirtyharry.wav',
+  'jerrymaguire2.wav',
+  'animalcrackers.wav',
+  'leagueoftheirown.wav',
+  'anniehall.wav',
+  'psycho.wav',
+  'wallstreet.wav',
+  'godfather2.wav',
+  'goneww3.wav',
+  'sonsofdes.wav',
+  'scarface.wav',
+  'beyondtheforest.wav',
+  'graduate.wav',
+  'drstrangelove.wav',
+  'advofsherlockh.wav',
+  'planetofapes.wav',
+  'casablanca2.wav',
+  'shining.wav',
+  'poltergeist.wav',
+  'marathonman2.wav',
+  'jazzsinger.wav',
+  'mommiedearest.wav',
+  'littlecaesar.wav',
+  'chinatown.wav',
+  'streetcardesire2.wav',
+  'terminator2.wav',
+  'soylentgreen.wav',
+  '2001b.wav',
+  'airplane.wav',
+  'rocky.wav',
+  'funnygirl.wav',
+  'animalhouse.wav',
+  'dracula.wav',
+  'kingkong.wav',
+  'lordoftherings.wav',
+  'dogdayafternoon.wav',
+  '42ndst.wav',
+  'ongoldenpond.wav',
+  'knuterockne.wav',
+  'goldfinger2.wav',
+  'naughty90s.wav',
+  'caddyshack.wav',
+  'auntiemame.wav',
+  'topgun.wav',
+  'deadpoetssociety.wav',
+  'moonstruck.wav',
+  'yankeedoodledandy.wav',
+  'dirtydancing.wav',
+  'wizardofoz3.wav',
+  'titanic.wav']
+
+
+const hey1 = `1. RHETT BUTLER (Clark Gable): "Frankly, my dear, I don't give a damn." 
+GONE WITH THE WIND, MGM, 1939
+Play clip (excerpt): Gone With the Wind
+2. VITO CORLEONE (Marlon Brando): "I'm going to make him an offer he can't refuse."
+THE GODFATHER, Paramount, 1972
+Play clip (excerpt): The Godfather
+3. TERRY MALLOY (Marlon Brando): "You don't understand! I could've had class. I could've been a contender. I could've been somebody, instead of a bum, which is what I am." 
+ON THE WATERFRONT, Columbia, 1954
+Play clip (excerpt): On the Waterfront
+4. DOROTHY GALE (Judy Garland): "Toto, I've (got) a feeling we're not in Kansas anymore." 
+THE WIZARD OF OZ, MGM, 1939
+Play clip (excerpt): The Wizard of Oz
+5. RICK BLAINE (Humphrey Bogart): "Here's looking at you, kid." 
+CASABLANCA, Warner Bros., 1942
+Play clip (excerpt): Casablanca
+6. HARRY CALLAHAN (Clint Eastwood): "Go ahead, make my day." 
+SUDDEN IMPACT, Warner Bros., 1983
+Play clip (excerpt): Sudden Impact
+7. NORMA DESMOND (Gloria Swanson): "All right, Mr. DeMille, I'm ready for my close-up." 
+SUNSET BOULEVARD, Paramount, 1950
+Play clip (excerpt): Sunset Boulevard
+8. HAN SOLO (Harrison Ford): "May the Force be with you." 
+STAR WARS, Twentieth Century Fox, 1977
+Play clip (excerpt): Star Wars
+9. MARGO CHANNING (Bette Davis): "Fasten your seatbelts. It's going to be a bumpy night."
+ALL ABOUT EVE, Twentieth Century Fox, 1950
+Play clip (excerpt): All About Eve
+10. TRAVIS BICKLE (Robert DeNiro): "You talkin' to me?" 
+TAXI DRIVER, Columbia, 1976
+Play clip (excerpt): Taxi Driver
+11. CAPTAIN (Strother Martin): "What we've got here is failure to communicate." 
+COOL HAND LUKE, Warner Bros., 1967
+Play clip (excerpt): Cool Hand Luke
+12. LT# COL# BILL KILGORE (Robert Duvall): "I love the smell of napalm in the morning." 
+APOCALYPSE NOW, United Artists, 1979
+Play clip (excerpt): Apocalypse Now
+13. OLIVER BARRETT IV (Ryan O'Neal): "Love means never having to say you're sorry." 
+LOVE STORY, Paramount, 1970
+Play clip (excerpt): Love Story
+14. SAM SPADE (Humphrey Bogart): "(What is it?)" "The stuff that dreams are made of." 
+THE MALTESE FALCON, Warner Bros., 1941
+Play clip (excerpt): The Maltese Falcon
+15. E.T# (voice of Joe Welsh): "E.T. phone home."
+E.T.: THE EXTRA-TERRESTRIAL, Universal, 1982
+Play clip (excerpt): E.T.: The Extra-Terrestrial
+16. VIRGIL TIBBS (Sidney Poitier): "They call me Mister Tibbs!" 
+IN THE HEAT OF THE NIGHT, United Artists, 1967
+Play clip (excerpt): In the Heat of the Night
+17. CHARLES FOSTER KANE (Orson Welles): "Rosebud." 
+CITIZEN KANE, RKO, 1941
+Play clip (excerpt): Citizen Kane
+18. ARTHUR 'CODY' JARRETT (James Cagney): "Made it, Ma! Top of the world!" 
+WHITE HEAT, Warner Bros., 1949
+Play clip (excerpt): White Heat
+19. HOWARD BEALE (Peter Finch): "I'm as mad as hell, and I'm not going to take this anymore! 
+NETWORK, United Artists, 1976
+Play clip (excerpt): Network
+20. RICK BLAINE (Humphrey Bogart): "Louis, I think this is the beginning of a beautiful friendship." 
+CASABLANCA, Warner Bros., 1942
+Play clip (excerpt): Casablanca
+21. DR# HANNIBAL LECTER (Anthony Hopkins): "A census taker once tried to test me. I ate his liver with some fava beans and a nice chianti." 
+THE SILENCE OF THE LAMBS, Orion, 1991
+Play clip (excerpt): The Silence of the Lambs
+22. JAMES BOND (Sean Connery): "Bond. James Bond." 
+DR. NO, United Artists, 1962
+Play clip (excerpt): Dr. No
+23. DOROTHY GALE (Judy Garland): "There's no place like home." 
+THE WIZARD OF OZ, MGM, 1939
+Play clip (excerpt): The Wizard of Oz
+24. NORMA DESMOND (Gloria Swanson): "I am big! It's the pictures that got small." 
+SUNSET BOULEVARD, Paramount, 1950
+Play clip (excerpt): Sunset Boulevard
+25. ROD TIDWELL (Cuba Gooding, Jr.): "Show me the money!" (also said by character Tom Cruise (Jerry Maguire))
+JERRY MAGUIRE, TriStar, 1996
+Play clip (excerpt): Jerry Maguire
+26. LADY LOU (Mae West): "Why don't you come up sometime and see me?" 
+SHE DONE HIM WRONG, Paramount, 1933
+Play clip (excerpt): She Done Him Wrong
+27. 'RATSO' RIZZO (Dustin Hoffman): "(Hey!) I'm walking here! I'm walking here!" 
+MIDNIGHT COWBOY, United Artists, 1969
+Play clip (excerpt): Midnight Cowboy
+28. ILSA LASZLO (Ingrid Bergman): "Play it, Sam. Play 'As Time Goes By.'" 
+CASABLANCA, Warner Bros., 1942
+Play clip (excerpt): Casablanca
+29. COL# NATHAN JESSEP (Jack Nicholson): "You can't handle the truth!" 
+A FEW GOOD MEN, Columbia, 1992
+Play clip (excerpt): A Few Good Men
+30. GRUSINSKAYA (Greta Garbo): "I want to be alone." 
+GRAND HOTEL, MGM, 1932
+Play clip (excerpt): Grand Hotel
+31. SCARLETT O'HARA (Vivien Leigh): "After all, tomorrow is another day!" 
+GONE WITH THE WIND, MGM, 1939
+Play clip (excerpt): Gone With the Wind
+32. CAPT# RENAULT (Claude Rains): "Round up the usual suspects." 
+CASABLANCA, Warner Bros., 1942
+Play clip (excerpt): Casablanca
+33. CUSTOMER (Estelle Reiner): "I'll have what she's having." 
+WHEN HARRY MET SALLY..., Columbia, 1989
+Play clip (excerpt): When Harry Met Sally
+34. MARIE 'SLIM' BROWNING (Lauren Bacall): "You know how to whistle, don't you, Steve? You just put your lips together and blow." 
+TO HAVE AND HAVE NOT, Warner Bros., 1944
+Play clip (excerpt): To Have and Have Not
+35. MARTIN BRODY (Roy Scheider): "You're gonna need a bigger boat." 
+JAWS, Universal, 1975
+Play clip (excerpt): Jaws
+36. GOLD HAT (Alfonso Bedoya): "Badges? We ain't got no badges! We don't need no badges! I don't have to show you any stinking badges!" 
+THE TREASURE OF THE SIERRA MADRE, Warner Bros., 1948
+Play clip (excerpt): The Treasure of the Sierra Madre
+37. THE TERMINATOR (Arnold Schwarzenegger): "I'll be back." 
+THE TERMINATOR, Orion, 1984
+Play clip (excerpt): The Terminator
+38. LOU GEHRIG (Gary Cooper): "Today, I consider myself the luckiest man on the face of the earth." 
+THE PRIDE OF THE YANKEES, RKO, 1942
+Play clip (excerpt): The Pride of the Yankees
+39. SHOELESS JOE JACKSON (voice of Ray Liotta): "If you build it, he will come." 
+FIELD OF DREAMS, Universal, 1989
+Play clip (excerpt): Field of Dreams
+40. FORREST GUMP (Tom Hanks): "My mama always said, 'Life is (was) like a box of chocolates. You never know what you're gonna get.'" 
+FORREST GUMP, Paramount, 1994
+Play clip (excerpt): Forrest Gump
+41. CLYDE BARROW (Warren Beatty): "We rob banks." 
+BONNIE AND CLYDE, Warner Bros., 1967
+Play clip (excerpt): Bonnie and Clyde
+42. MR# MAGUIRE (Walter Brooke): "Plastics." 
+THE GRADUATE, Embassy Pictures, 1967
+Play clip (excerpt): The Graduate
+43. RICK BLAINE (Humphrey Bogart): "We'll always have Paris." 
+CASABLANCA, Warner Bros., 1942
+Play clip (excerpt): Casablanca
+44. COLE SEAR (Haley Joel Osment): "I see dead people." 
+THE SIXTH SENSE, Hollywood Pictures, 1999
+Play clip (excerpt): The Sixth Sense
+45. STANLEY KOWALSKI (Marlon Brando): "Stella! Hey, Stella!" 
+A STREETCAR NAMED DESIRE, Warner Bros., 1951
+Play clip (excerpt): A Streetcar Named Desire
+46. CHARLOTTE VALE (Bette Davis): "Oh, Jerry, don't let's ask for the moon. We have the stars." 
+NOW, VOYAGER, Warner Bros., 1942
+Play clip (excerpt): Now, Voyager
+47. JOEY STARRETT (Brandon DeWilde): "Shane! Shane! Come back!" 
+SHANE, Paramount, 1953
+Play clip (excerpt): Shane
+48. OSGOOD FIELDING III (Joe E. Brown): "Well, nobody's perfect." 
+SOME LIKE IT HOT, United Artists, 1959
+Play clip (excerpt): Some Like It Hot
+49. HENRY FRANKENSTEIN (Colin Clive): "It's alive! It's alive!" 
+FRANKENSTEIN, Universal, 1931
+Play clip (excerpt): Frankenstein
+50. JIM LOVELL (Tom Hanks): "Houston, we have a problem." 
+APOLLO 13, Universal, 1995
+Play clip (excerpt): Apollo 13
+51. HARRY CALLAHAN (Clint Eastwood): "You've got to ask yourself one question: 'Do I feel lucky?' Well, do ya, punk?" 
+DIRTY HARRY, Warner Bros., 1971
+Play clip (excerpt): Dirty Harry
+52. DOROTHY BOYD (Renee Zellweger): "You had me at 'hello.'" 
+JERRY MAGUIRE, TriStar, 1996
+Play clip (excerpt): Jerry Maguire
+53. CAPT# JEFFREY T# SPAULDING (Groucho Marx): "One morning I shot an elephant in my pajamas. How he got in my pajamas, I don't know." 
+ANIMAL CRACKERS, Paramount, 1930
+Play clip (excerpt): Animal Crackers
+54. JIMMY DUGAN (Tom Hanks): "There's no crying in baseball!" 
+A LEAGUE OF THEIR OWN, Columbia, 1992
+Play clip (excerpt): A League of Their Own
+55. ANNIE HALL (Diane Keaton): "La-dee-da, la-dee-da." 
+ANNIE HALL, United Artists, 1977
+Play clip (excerpt): Annie Hall
+56. NORMAN BATES (Anthony Perkins): "(Well), A boy's best friend is his mother." 
+PSYCHO, Paramount, 1960
+Play clip (excerpt): Psycho
+57. GORDON GEKKO (Michael Douglas): "Greed, for lack of a better word, is good." 
+WALL STREET, Twentieth Century Fox, 1987
+Play clip (excerpt): Wall Street
+58. MICHAEL CORLEONE (Al Pacino): "Keep your friends close, but your enemies closer." 
+THE GODFATHER: PART II, Paramount, 1974
+Play clip (excerpt): The Godfather: Part II
+59. SCARLETT O'HARA (Vivien Leigh): "As God is my witness, I'll never be hungry again." 
+GONE WITH THE WIND, MGM, 1939
+Play clip (excerpt): Gone With the Wind
+60. OLIVER (Oliver Hardy): "Well, here's another nice mess you've gotten me into!" 
+SONS OF THE DESERT, MGM, 1933
+Play clip (excerpt): Sons of the Desert
+61. TONY MONTANA (Al Pacino): "Say 'hello' to my little friend!" 
+SCARFACE, Universal, 1983 
+Play clip (excerpt): Scarface
+62. ROSA MOLINE (Bette Davis): "What a dump." 
+BEYOND THE FOREST, Warner Bros., 1949
+Play clip (excerpt): Beyond the Forest
+63. BENJAMIN BRADDOCK (Dustin Hoffman): "Mrs. Robinson, you're trying to seduce me. Aren't you?" 
+THE GRADUATE, Embassy Pictures, 1967
+Play clip (excerpt): The Graduate
+64. PRESIDENT MERKIN MUFFLEY (Peter Sellers): "Gentlemen, you can't fight in here! This is the War Room!" 
+ DR. STRANGELOVE, Columbia, 1964
+Play clip (excerpt): Dr. Strangelove
+65. SHERLOCK HOLMES (Basil Rathbone): "Elementary, my dear Watson." 
+THE ADVENTURES OF SHERLOCK HOLMES, Twentieth Century Fox, 1939
+Play clip (excerpt): The Adventures of Sherlock Holmes
+66. GEORGE TAYLOR (Charlton Heston): "Get your stinking paws off me, you damned dirty ape!" 
+PLANET OF THE APES, Twentieth Century Fox, 1968
+Play clip (excerpt): Planet of the Apes
+67. RICK BLAINE (Humphrey Bogart): "Of all the gin joints in all the towns in all the world, she walks into mine." 
+ CASABLANCA, Warner Bros., 1942
+Play clip (excerpt): Casablanca
+68. JACK TORRANCE (Jack Nicholson): "Here's Johnny!" 
+THE SHINING, Warner Bros., 1980
+Play clip (excerpt): The Shining
+69. CAROL ANNE FREELING (Heather O'Rourke): "They're here!" 
+POLTERGEIST, MGM, 1982
+Play clip (excerpt): Poltergeist
+70. DR# CHRISTIAN SZELL (Laurence ODR. CHRISTIAN SZELL (Laurence Olivier): "Is it safe?"
+MARATHON MAN, Paramount, 1976
+Play clip (excerpt): Marathon Man
+71. JAKIE RABINOWITZ/JACK ROBIN (Al Jolson): "Wait a minute, wait a minute. You ain't heard nothin' yet!" 
+THE JAZZ SINGER, Warner Bros., 1927
+Play clip (excerpt): The Jazz Singer - 1927
+72. JOAN CRAWFORD (Faye Dunaway): "No wire hangers, ever!" 
+MOMMIE DEAREST, Paramount, 1981
+Play clip (excerpt): Mommie Dearest
+73. CESARE ENRICO 'RICO' BANDELLO (Edward G. Robinson): "Mother of mercy, is this the end of Rico?" 
+LITTLE CAESAR, First National, 1930
+Play clip (excerpt): Little Caesar
+74. WALSH (Joe Mantell): "Forget it, Jake. It's Chinatown." 
+ CHINATOWN, Paramount, 1974
+Play clip (excerpt): Chinatown
+75. BLANCHE DUBOIS (Vivien Leigh): "I have always depended on the kindness of strangers." 
+ A STREETCAR NAMED DESIRE, Warner Bros., 1951
+Play clip (excerpt): A Streetcar Named Desire
+76. THE TERMINATOR (Arnold Schwarzenegger): "Hasta la vista, baby." 
+TERMINATOR 2: JUDGMENT DAY, TriStar, 1991
+Play clip (excerpt): Terminator 2: Judgment Day
+77. DET# ROBERT THORN (Charlton Heston): "Soylent Green is people!" 
+SOYLENT GREEN, MGM, 1973
+Play clip (excerpt): Soylent Green
+78. DAVE BOWMAN (Keir Dullea): "Open the pod bay doors, (please) HAL." 
+ 2001: A SPACE ODYSSEY, MGM, 1968
+Play clip (excerpt): 2001: A Space Odyssey
+79. TED STRIKER (Robert Hays): "Surely you can't be serious." DR. RUMACK (Leslie Nielsen): "I am serious. And don't call me Shirley." 
+AIRPLANE!, Paramount, 1980
+Play clip (excerpt): Airplane
+80. ROCKY BALBOA (Sylvester Stallone): "Yo, Adrian!" 
+ROCKY, United Artists, 1976
+Play clip (excerpt): Rocky
+81. FANNY BRICE (Barbra Streisand): "Hello, gorgeous." 
+FUNNY GIRL, Columbia, 1968
+Play clip (excerpt): Funny Girl
+82. JOHN 'BLUTO' BLUTARSKY (John Belushi): "Toga! Toga!"
+NATIONAL LAMPOON'S ANIMAL HOUSE, Universal, 1978
+Play clip (excerpt): Animal House
+83. COUNT DRACULA (Bela Lugosi): "Listen to them. Children of the night. What music they make." 
+DRACULA, Universal, 1931
+Play clip (excerpt): Dracula
+84. CARL DENHAM (Robert Armstrong): "Oh, no, it wasn't the airplanes. It was Beauty killed the Beast." 
+KING KONG, RKO, 1933
+Play clip (excerpt): King Kong
+85. GOLLUM (Andy Serkis): "My precious." 
+THE LORD OF THE RINGS: THE TWO TOWERS, New Line Cinema, 2002
+Play clip (excerpt): The Lord of the Rings: The Two Towers
+86. SONNY WORTZIK (Al Pacino): "Attica! Attica!" 
+DOG DAY AFTERNOON, Warner Bros., 1975
+Play clip (excerpt): Dog Day Afternoon
+87. JULIAN MARSH (Warner Baxter): "Sawyer, you're going out a youngster, but you've got to come back a star!" 
+ 42ND STREET, Warner Bros., 1933
+Play clip (excerpt): 42nd Street
+88. ETHEL THAYER (Katharine Hepburn): "Listen to me, mister. You're my knight in shining armor. Don't you forget it. You're going to get back on that horse, and I'm going to be right behind you, holding on tight, and away we're gonna go, go, go!" 
+ON GOLDEN POND, Universal, 1981
+Play clip (excerpt): On Golden Pond
+89. KNUTE ROCKNE (Pat O'Brien): "Tell 'em to go out there with all they got and win just one for the Gipper." 
+KNUTE ROCKNE ALL AMERICAN, Warner Bros., 1940
+Play clip (excerpt): Knute Rockne: All American
+90. JAMES BOND (Sean Connery): "A martini. Shaken, not stirred." 
+GOLDFINGER, United Artists, 1964
+Play clip (excerpt): Goldfinger
+91. DEXTER (Bud Abbott): "Who's on first." 
+THE NAUGHTY NINETIES, Universal, 1945
+Play clip (excerpt): The Naughty Nineties
+92. CARL SPACKLER (Bill Murray): "Cinderella story. Outta nowhere. A former greenskeeper, now, about to become the Masters champion. It looks like a mirac... It's in the hole! It's in the hole! It's in the hole!" 
+CADDYSHACK, Orion, 1980
+Play clip (excerpt): Caddyshack
+93. MAME DENNIS (Rosalind Russell): "Life is a banquet, and most poor suckers are starving to death!" 
+AUNTIE MAME, Warner Bros., 1958
+Play clip (excerpt): Auntie Mame
+94. LT# PETE 'MAVERICK' MITCHELL (Tom Cruise): "I feel the need..."
+TOP GUN, Paramount, 1986
+Play clip (excerpt): Top Gun
+95. JOHN KEATING (Robin Williams): "Carpe diem. Seize the day, boys. Make your lives extraordinary."
+DEAD POETS SOCIETY, Touchstone, 1989
+Play clip (excerpt): Dead Poets Society
+96. LORETTA CASTORINI (Cher): "Snap out of it!" 
+MOONSTRUCK, MGM, 1987
+Play clip (excerpt): Play clip (excerpt): Moonstruck
+97. GEORGE M# COHAN (James Cagney): "(Ladies and Gentlemen), My mother thanks you. My father thanks you. My sister thanks you. And I thank you."
+YANKEE DOODLE DANDY, Warner Bros., 1942
+Play clip (excerpt): Yankee Doodle Dandy
+98. JOHNNY CASTLE (Patrick Swayze): "Nobody puts Baby in a corner." 
+DIRTY DANCING, Artisan, 1987
+Play clip (excerpt): Dirty Dancing
+99. THE WICKED WITCH OF THE WEST (Margaret Hamilton): "I'll get you, my pretty, and your little dog, too!"
+ THE WIZARD OF OZ, MGM, 1939
+Play clip (excerpt): The Wizard of Oz
+100. JACK DAWSON (Leonardo DiCaprio): "I'm (the) king of the world!"
+TITANIC, Paramount/Twentieth Century Fox, 1997
+Play clip (excerpt): Titanic`;
+
+const testarr = `99. THE WICKED WITCH OF THE WEST (Margaret Hamilton): "I'll get you, my pretty, and your little dog, too!"
+ THE WIZARD OF OZ, MGM, 1939
+Play clip (excerpt): The Wizard of Oz
+100. JACK DAWSON (Leonardo DiCaprio): "I'm (the) king of the world!"
+TITANIC, Paramount/Twentieth Century Fox, 1997
+Play clip (excerpt): Titanic`;
+
+//const delNL = hey1.replace(/^[\s\t]*(\r\n|\n|\r)/gm, '');
+//console.log(delNL);
+//const strArr = testarr.split("\n");
+const strArr = hey1.split("\n");
+
+let counter = 0;
+const result = {};
+let number = 0;
+let phrase = '';
+let movie = '';
+let actor = '';
+let character = '';
+
+for (let i = 0; i < strArr.length; i++) {
+  console.log(`i: ${i}`);
+  counter++;
+  console.log(`counter: ${counter}`);
+  if (counter === 1) {
+    // Here we parse number, character, actor and quote
+    const nCAQ = strArr[i];
+    console.log(`nCAQ: ${nCAQ}`);
+    let rest;
+    ([number, rest] = nCAQ.split('. '));
+    console.log(`rest: ${rest}`);
+    let rest1;
+    if (Array.isArray(rest)) {
+      rest1 = rest.join('. ');
+    } else {
+      rest1 = rest;//.join('. ');
+    }
+    
+    console.log(`rest1: ${rest1}`);
+    console.log(`number: ${number}`);
+
+    ([character, rest] = rest1.split(' ('));
+    console.log(`character: ${character}`);
+
+    ([actor, phrase] = rest.split('): '));
+    console.log(`actor: ${actor}`);
+    console.log(`phrase: ${phrase}`);
+  }
+  if (counter === 2) {
+    movie = strArr[i];
+    console.log(`movie: ${movie}`);
+  }
+  if (counter === 3) {
+    // Flush all field to obj
+    counter = 0;
+    result[number] = {
+      file: wavs[parseInt(number, 10)-1],
+      phrase,
+      movie,
+      character,
+      actor,
+    };
+  }
+  console.dir(result);
+};
+
+console.log('\nFinally:');
+console.dir(result);
+
+const quotes = {
+  '1':
+  {
+    file: 'goneww.wav',
+    phrase: '"Frankly, my dear, I don\'t give a damn." ',
+    movie: 'GONE WITH THE WIND, MGM, 1939',
+    character: 'RHETT BUTLER',
+    actor: 'Clark Gable'
+  },
+  '2':
+  {
+    file: 'godfather.wav',
+    phrase: '"I\'m going to make him an offer he can\'t refuse."',
+    movie: 'THE GODFATHER, Paramount, 1972',
+    character: 'VITO CORLEONE',
+    actor: 'Marlon Brando'
+  },
+  '3':
+  {
+    file: 'onwaterfront.wav',
+    phrase: '"You don\'t understand! I could\'ve had class',
+    movie: 'ON THE WATERFRONT, Columbia, 1954',
+    character: 'TERRY MALLOY',
+    actor: 'Marlon Brando'
+  },
+  '4':
+  {
+    file: 'wizardofoz.wav',
+    phrase: '"Toto, I\'ve',
+    movie: 'THE WIZARD OF OZ, MGM, 1939',
+    character: 'DOROTHY GALE',
+    actor: 'Judy Garland'
+  },
+  '5':
+  {
+    file: 'casablanca.wav',
+    phrase: '"Here\'s looking at you, kid." ',
+    movie: 'CASABLANCA, Warner Bros., 1942',
+    character: 'RICK BLAINE',
+    actor: 'Humphrey Bogart'
+  },
+  '6':
+  {
+    file: 'suddenimpact.wav',
+    phrase: '"Go ahead, make my day." ',
+    movie: 'SUDDEN IMPACT, Warner Bros., 1983',
+    character: 'HARRY CALLAHAN',
+    actor: 'Clint Eastwood'
+  },
+  '7':
+  {
+    file: 'sunsetblvd.wav',
+    phrase: '"All right, Mr',
+    movie: 'SUNSET BOULEVARD, Paramount, 1950',
+    character: 'NORMA DESMOND',
+    actor: 'Gloria Swanson'
+  },
+  '8':
+  {
+    file: 'starwars.wav',
+    phrase: '"May the Force be with you." ',
+    movie: 'STAR WARS, Twentieth Century Fox, 1977',
+    character: 'HAN SOLO',
+    actor: 'Harrison Ford'
+  },
+  '9':
+  {
+    file: 'allabouteve.wav',
+    phrase: '"Fasten your seatbelts',
+    movie: 'ALL ABOUT EVE, Twentieth Century Fox, 1950',
+    character: 'MARGO CHANNING',
+    actor: 'Bette Davis'
+  },
+  '10':
+  {
+    file: 'taxid.wav',
+    phrase: '"You talkin\' to me?" ',
+    movie: 'TAXI DRIVER, Columbia, 1976',
+    character: 'TRAVIS BICKLE',
+    actor: 'Robert DeNiro'
+  },
+  '11':
+  {
+    file: 'coolhandluke.wav',
+    phrase: '"What we\'ve got here is failure to communicate." ',
+    movie: 'COOL HAND LUKE, Warner Bros., 1967',
+    character: 'CAPTAIN',
+    actor: 'Strother Martin'
+  },
+  '12':
+  {
+    file: 'apocalypsenow.wav',
+    phrase: '"I love the smell of napalm in the morning." ',
+    movie: 'APOCALYPSE NOW, United Artists, 1979',
+    character: 'LT# COL# BILL KILGORE',
+    actor: 'Robert Duvall'
+  },
+  '13':
+  {
+    file: 'lovestory.wav',
+    phrase: '"Love means never having to say you\'re sorry." ',
+    movie: 'LOVE STORY, Paramount, 1970',
+    character: 'OLIVER BARRETT IV',
+    actor: 'Ryan O\'Neal'
+  },
+  '14':
+  {
+    file: 'maltesefalcon.wav',
+    phrase: '"(What is it?)" "The stuff that dreams are made of." ',
+    movie: 'THE MALTESE FALCON, Warner Bros., 1941',
+    character: 'SAM SPADE',
+    actor: 'Humphrey Bogart'
+  },
+  '15':
+  {
+    file: 'etth.wav',
+    phrase: '"E.T',
+    movie: 'E.T.: THE EXTRA-TERRESTRIAL, Universal, 1982',
+    character: 'E.T#',
+    actor: 'voice of Joe Welsh'
+  },
+  '16':
+  {
+    file: 'intheheat.wav',
+    phrase: '"They call me Mister Tibbs!" ',
+    movie: 'IN THE HEAT OF THE NIGHT, United Artists, 1967',
+    character: 'VIRGIL TIBBS',
+    actor: 'Sidney Poitier'
+  },
+  '17':
+  {
+    file: 'citizenkane.wav',
+    phrase: '"Rosebud." ',
+    movie: 'CITIZEN KANE, RKO, 1941',
+    character: 'CHARLES FOSTER KANE',
+    actor: 'Orson Welles'
+  },
+  '18':
+  {
+    file: 'whiteheat.wav',
+    phrase: 'Made it, Ma! Top of the world!',
+    movie: 'WHITE HEAT, Warner Bros., 1949',
+    character: 'ARTHUR \'CODY\' JARRETT',
+    actor: 'James Cagney'
+  },
+  '19':
+  {
+    file: 'network.wav',
+    phrase: '"I\'m as mad as hell, and I\'m not going to take this anymore!',
+    movie: 'NETWORK, United Artists, 1976',
+    character: 'HOWARD BEALE',
+    actor: 'Peter Finch'
+  },
+  '20':
+  {
+    file: 'casablanca5.wav',
+    phrase: '"Louis, I think this is the beginning of a beautiful friendship." ',
+    movie: 'CASABLANCA, Warner Bros., 1942',
+    character: 'RICK BLAINE',
+    actor: 'Humphrey Bogart'
+  },
+  '21':
+  {
+    file: 'silenceoflambs.wav',
+    phrase: '"A census taker once tried to test me',
+    movie: 'THE SILENCE OF THE LAMBS, Orion, 1991',
+    character: 'DR# HANNIBAL LECTER',
+    actor: 'Anthony Hopkins'
+  },
+  '22':
+  {
+    file: 'drno.wav',
+    phrase: '"Bond',
+    movie: 'DR. NO, United Artists, 1962',
+    character: 'JAMES BOND',
+    actor: 'Sean Connery'
+  },
+  '23':
+  {
+    file: 'wizardofoz2.wav',
+    phrase: '"There\'s no place like home." ',
+    movie: 'THE WIZARD OF OZ, MGM, 1939',
+    character: 'DOROTHY GALE',
+    actor: 'Judy Garland'
+  },
+  '24':
+  {
+    file: 'sunsetblvd2.wav',
+    phrase: '"I am big! It\'s the pictures that got small." ',
+    movie: 'SUNSET BOULEVARD, Paramount, 1950',
+    character: 'NORMA DESMOND',
+    actor: 'Gloria Swanson'
+  },
+  '25':
+  {
+    file: 'jerrymaguire.wav',
+    phrase: '"Show me the money!"',
+    movie: 'JERRY MAGUIRE, TriStar, 1996',
+    character: 'ROD TIDWELL',
+    actor: 'Cuba Gooding, Jr.'
+  },
+  '26':
+  {
+    file: 'shedonehimwr.wav',
+    phrase: '"Why don\'t you come up sometime and see me?" ',
+    movie: 'SHE DONE HIM WRONG, Paramount, 1933',
+    character: 'LADY LOU',
+    actor: 'Mae West'
+  },
+  '27':
+  {
+    file: 'midnightcowboy.wav',
+    phrase: '"(Hey!) I\'m walking here! I\'m walking here!" ',
+    movie: 'MIDNIGHT COWBOY, United Artists, 1969',
+    character: '\'RATSO\' RIZZO',
+    actor: 'Dustin Hoffman'
+  },
+  '28':
+  {
+    file: 'casablanca3.wav',
+    phrase: '"Play it, Sam',
+    movie: 'CASABLANCA, Warner Bros., 1942',
+    character: 'ILSA LASZLO',
+    actor: 'Ingrid Bergman'
+  },
+  '29':
+  {
+    file: 'fewgoodmen.wav',
+    phrase: '"You can\'t handle the truth!" ',
+    movie: 'A FEW GOOD MEN, Columbia, 1992',
+    character: 'COL# NATHAN JESSEP',
+    actor: 'Jack Nicholson'
+  },
+  '30':
+  {
+    file: 'grandhotel.wav',
+    phrase: '"I want to be alone." ',
+    movie: 'GRAND HOTEL, MGM, 1932',
+    character: 'GRUSINSKAYA',
+    actor: 'Greta Garbo'
+  },
+  '31':
+  {
+    file: 'goneww2.wav',
+    phrase: '"After all, tomorrow is another day!" ',
+    movie: 'GONE WITH THE WIND, MGM, 1939',
+    character: 'SCARLETT O\'HARA',
+    actor: 'Vivien Leigh'
+  },
+  '32':
+  {
+    file: 'casablanca6.wav',
+    phrase: '"Round up the usual suspects." ',
+    movie: 'CASABLANCA, Warner Bros., 1942',
+    character: 'CAPT# RENAULT',
+    actor: 'Claude Rains'
+  },
+  '33':
+  {
+    file: 'whenharrymetsally.wav',
+    phrase: '"I\'ll have what she\'s having." ',
+    movie: 'WHEN HARRY MET SALLY..., Columbia, 1989',
+    character: 'CUSTOMER',
+    actor: 'Estelle Reiner'
+  },
+  '34':
+  {
+    file: 'tohaveandhavenot.wav',
+    phrase: '"You know how to whistle, don\'t you, Steve? You just put your lips together and blow." ',
+    movie: 'TO HAVE AND HAVE NOT, Warner Bros., 1944',
+    character: 'MARIE \'SLIM\' BROWNING',
+    actor: 'Lauren Bacall'
+  },
+  '35':
+  {
+    file: 'jaws.wav',
+    phrase: '"You\'re gonna need a bigger boat." ',
+    movie: 'JAWS, Universal, 1975',
+    character: 'MARTIN BRODY',
+    actor: 'Roy Scheider'
+  },
+  '36':
+  {
+    file: 'treasuresm.wav',
+    phrase: '"Badges? We ain\'t got no badges! We don\'t need no badges! I don\'t have to show you any stinking badges!" ',
+    movie: 'THE TREASURE OF THE SIERRA MADRE, Warner Bros., 1948',
+    character: 'GOLD HAT',
+    actor: 'Alfonso Bedoya'
+  },
+  '37':
+  {
+    file: 'terminator.wav',
+    phrase: '"I\'ll be back." ',
+    movie: 'THE TERMINATOR, Orion, 1984',
+    character: 'THE TERMINATOR',
+    actor: 'Arnold Schwarzenegger'
+  },
+  '38':
+  {
+    file: 'prideoftheyankees.wav',
+    phrase: '"Today, I consider myself the luckiest man on the face of the earth." ',
+    movie: 'THE PRIDE OF THE YANKEES, RKO, 1942',
+    character: 'LOU GEHRIG',
+    actor: 'Gary Cooper'
+  },
+  '39':
+  {
+    file: 'fieldofd.wav',
+    phrase: '"If you build it, he will come." ',
+    movie: 'FIELD OF DREAMS, Universal, 1989',
+    character: 'SHOELESS JOE JACKSON',
+    actor: 'voice of Ray Liotta'
+  },
+  '40':
+  {
+    file: 'forrestg.wav',
+    phrase: '"My mama always said, \'Life is',
+    movie: 'FORREST GUMP, Paramount, 1994',
+    character: 'FORREST GUMP',
+    actor: 'Tom Hanks'
+  },
+  '41':
+  {
+    file: 'bonnieclyde.wav',
+    phrase: '"We rob banks." ',
+    movie: 'BONNIE AND CLYDE, Warner Bros., 1967',
+    character: 'CLYDE BARROW',
+    actor: 'Warren Beatty'
+  },
+  '42':
+  {
+    file: 'graduate5.wav',
+    phrase: '"Plastics." ',
+    movie: 'THE GRADUATE, Embassy Pictures, 1967',
+    character: 'MR# MAGUIRE',
+    actor: 'Walter Brooke'
+  },
+  '43':
+  {
+    file: 'casablanca7.wav',
+    phrase: '"We\'ll always have Paris." ',
+    movie: 'CASABLANCA, Warner Bros., 1942',
+    character: 'RICK BLAINE',
+    actor: 'Humphrey Bogart'
+  },
+  '44':
+  {
+    file: 'sixthsense.wav',
+    phrase: '"I see dead people." ',
+    movie: 'THE SIXTH SENSE, Hollywood Pictures, 1999',
+    character: 'COLE SEAR',
+    actor: 'Haley Joel Osment'
+  },
+  '45':
+  {
+    file: 'streetcardesire.wav',
+    phrase: '"Stella! Hey, Stella!" ',
+    movie: 'A STREETCAR NAMED DESIRE, Warner Bros., 1951',
+    character: 'STANLEY KOWALSKI',
+    actor: 'Marlon Brando'
+  },
+  '46':
+  {
+    file: 'nowvoyager.wav',
+    phrase: '"Oh, Jerry, don\'t let\'s ask for the moon',
+    movie: 'NOW, VOYAGER, Warner Bros., 1942',
+    character: 'CHARLOTTE VALE',
+    actor: 'Bette Davis'
+  },
+  '47':
+  {
+    file: 'shane4.wav',
+    phrase: '"Shane! Shane! Come back!" ',
+    movie: 'SHANE, Paramount, 1953',
+    character: 'JOEY STARRETT',
+    actor: 'Brandon DeWilde'
+  },
+  '48':
+  {
+    file: 'somelike.wav',
+    phrase: undefined,
+    movie: 'SOME LIKE IT HOT, United Artists, 1959',
+    character: 'OSGOOD FIELDING III',
+    actor: 'Joe E'
+  },
+  '49':
+  {
+    file: 'frankenstein.wav',
+    phrase: '"It\'s alive! It\'s alive!" ',
+    movie: 'FRANKENSTEIN, Universal, 1931',
+    character: 'HENRY FRANKENSTEIN',
+    actor: 'Colin Clive'
+  },
+  '50':
+  {
+    file: 'apollo13.wav',
+    phrase: '"Houston, we have a problem." ',
+    movie: 'APOLLO 13, Universal, 1995',
+    character: 'JIM LOVELL',
+    actor: 'Tom Hanks'
+  },
+  '51':
+  {
+    file: 'dirtyharry.wav',
+    phrase: '"You\'ve got to ask yourself one question: \'Do I feel lucky?\' Well, do ya, punk?" ',
+    movie: 'DIRTY HARRY, Warner Bros., 1971',
+    character: 'HARRY CALLAHAN',
+    actor: 'Clint Eastwood'
+  },
+  '52':
+  {
+    file: 'jerrymaguire2.wav',
+    phrase: '"You had me at \'hello.\'" ',
+    movie: 'JERRY MAGUIRE, TriStar, 1996',
+    character: 'DOROTHY BOYD',
+    actor: 'Renee Zellweger'
+  },
+  '53':
+  {
+    file: 'animalcrackers.wav',
+    phrase: '"One morning I shot an elephant in my pajamas',
+    movie: 'ANIMAL CRACKERS, Paramount, 1930',
+    character: 'CAPT# JEFFREY T# SPAULDING',
+    actor: 'Groucho Marx'
+  },
+  '54':
+  {
+    file: 'leagueoftheirown.wav',
+    phrase: '"There\'s no crying in baseball!" ',
+    movie: 'A LEAGUE OF THEIR OWN, Columbia, 1992',
+    character: 'JIMMY DUGAN',
+    actor: 'Tom Hanks'
+  },
+  '55':
+  {
+    file: 'anniehall.wav',
+    phrase: '"La-dee-da, la-dee-da." ',
+    movie: 'ANNIE HALL, United Artists, 1977',
+    character: 'ANNIE HALL',
+    actor: 'Diane Keaton'
+  },
+  '56':
+  {
+    file: 'psycho.wav',
+    phrase: '"(Well), A boy\'s best friend is his mother." ',
+    movie: 'PSYCHO, Paramount, 1960',
+    character: 'NORMAN BATES',
+    actor: 'Anthony Perkins'
+  },
+  '57':
+  {
+    file: 'wallstreet.wav',
+    phrase: '"Greed, for lack of a better word, is good." ',
+    movie: 'WALL STREET, Twentieth Century Fox, 1987',
+    character: 'GORDON GEKKO',
+    actor: 'Michael Douglas'
+  },
+  '58':
+  {
+    file: 'godfather2.wav',
+    phrase: '"Keep your friends close, but your enemies closer." ',
+    movie: 'THE GODFATHER: PART II, Paramount, 1974',
+    character: 'MICHAEL CORLEONE',
+    actor: 'Al Pacino'
+  },
+  '59':
+  {
+    file: 'goneww3.wav',
+    phrase: '"As God is my witness, I\'ll never be hungry again." ',
+    movie: 'GONE WITH THE WIND, MGM, 1939',
+    character: 'SCARLETT O\'HARA',
+    actor: 'Vivien Leigh'
+  },
+  '60':
+  {
+    file: 'sonsofdes.wav',
+    phrase: '"Well, here\'s another nice mess you\'ve gotten me into!" ',
+    movie: 'SONS OF THE DESERT, MGM, 1933',
+    character: 'OLIVER',
+    actor: 'Oliver Hardy'
+  },
+  '61':
+  {
+    file: 'scarface.wav',
+    phrase: '"Say \'hello\' to my little friend!" ',
+    movie: 'SCARFACE, Universal, 1983 ',
+    character: 'TONY MONTANA',
+    actor: 'Al Pacino'
+  },
+  '62':
+  {
+    file: 'beyondtheforest.wav',
+    phrase: '"What a dump." ',
+    movie: 'BEYOND THE FOREST, Warner Bros., 1949',
+    character: 'ROSA MOLINE',
+    actor: 'Bette Davis'
+  },
+  '63':
+  {
+    file: 'graduate.wav',
+    phrase: '"Mrs',
+    movie: 'THE GRADUATE, Embassy Pictures, 1967',
+    character: 'BENJAMIN BRADDOCK',
+    actor: 'Dustin Hoffman'
+  },
+  '64':
+  {
+    file: 'drstrangelove.wav',
+    phrase: '"Gentlemen, you can\'t fight in here! This is the War Room!" ',
+    movie: ' DR. STRANGELOVE, Columbia, 1964',
+    character: 'PRESIDENT MERKIN MUFFLEY',
+    actor: 'Peter Sellers'
+  },
+  '65':
+  {
+    file: 'advofsherlockh.wav',
+    phrase: '"Elementary, my dear Watson." ',
+    movie: 'THE ADVENTURES OF SHERLOCK HOLMES, Twentieth Century Fox, 1939',
+    character: 'SHERLOCK HOLMES',
+    actor: 'Basil Rathbone'
+  },
+  '66':
+  {
+    file: 'planetofapes.wav',
+    phrase: '"Get your stinking paws off me, you damned dirty ape!" ',
+    movie: 'PLANET OF THE APES, Twentieth Century Fox, 1968',
+    character: 'GEORGE TAYLOR',
+    actor: 'Charlton Heston'
+  },
+  '67':
+  {
+    file: 'casablanca2.wav',
+    phrase: '"Of all the gin joints in all the towns in all the world, she walks into mine." ',
+    movie: ' CASABLANCA, Warner Bros., 1942',
+    character: 'RICK BLAINE',
+    actor: 'Humphrey Bogart'
+  },
+  '68':
+  {
+    file: 'shining.wav',
+    phrase: '"Here\'s Johnny!" ',
+    movie: 'THE SHINING, Warner Bros., 1980',
+    character: 'JACK TORRANCE',
+    actor: 'Jack Nicholson'
+  },
+  '69':
+  {
+    file: 'poltergeist.wav',
+    phrase: '"They\'re here!" ',
+    movie: 'POLTERGEIST, MGM, 1982',
+    character: 'CAROL ANNE FREELING',
+    actor: 'Heather O\'Rourke'
+  },
+  '70':
+  {
+    file: 'marathonman2.wav',
+    phrase: undefined,
+    movie: 'MARATHON MAN, Paramount, 1976',
+    character: 'DR# CHRISTIAN SZELL',
+    actor: 'Laurence ODR'
+  },
+  '71':
+  {
+    file: 'jazzsinger.wav',
+    phrase: '"Wait a minute, wait a minute',
+    movie: 'THE JAZZ SINGER, Warner Bros., 1927',
+    character: 'JAKIE RABINOWITZ/JACK ROBIN',
+    actor: 'Al Jolson'
+  },
+  '72':
+  {
+    file: 'mommiedearest.wav',
+    phrase: '"No wire hangers, ever!" ',
+    movie: 'MOMMIE DEAREST, Paramount, 1981',
+    character: 'JOAN CRAWFORD',
+    actor: 'Faye Dunaway'
+  },
+  '73':
+  {
+    file: 'littlecaesar.wav',
+    phrase: undefined,
+    movie: 'LITTLE CAESAR, First National, 1930',
+    character: 'CESARE ENRICO \'RICO\' BANDELLO',
+    actor: 'Edward G'
+  },
+  '74':
+  {
+    file: 'chinatown.wav',
+    phrase: '"Forget it, Jake',
+    movie: ' CHINATOWN, Paramount, 1974',
+    character: 'WALSH',
+    actor: 'Joe Mantell'
+  },
+  '75':
+  {
+    file: 'streetcardesire2.wav',
+    phrase: '"I have always depended on the kindness of strangers." ',
+    movie: ' A STREETCAR NAMED DESIRE, Warner Bros., 1951',
+    character: 'BLANCHE DUBOIS',
+    actor: 'Vivien Leigh'
+  },
+  '76':
+  {
+    file: 'terminator2.wav',
+    phrase: '"Hasta la vista, baby." ',
+    movie: 'TERMINATOR 2: JUDGMENT DAY, TriStar, 1991',
+    character: 'THE TERMINATOR',
+    actor: 'Arnold Schwarzenegger'
+  },
+  '77':
+  {
+    file: 'soylentgreen.wav',
+    phrase: '"Soylent Green is people!" ',
+    movie: 'SOYLENT GREEN, MGM, 1973',
+    character: 'DET# ROBERT THORN',
+    actor: 'Charlton Heston'
+  },
+  '78':
+  {
+    file: '2001b.wav',
+    phrase: '"Open the pod bay doors,',
+    movie: ' 2001: A SPACE ODYSSEY, MGM, 1968',
+    character: 'DAVE BOWMAN',
+    actor: 'Keir Dullea'
+  },
+  '79':
+  {
+    file: 'airplane.wav',
+    phrase: '"Surely you can\'t be serious." DR',
+    movie: 'AIRPLANE!, Paramount, 1980',
+    character: 'TED STRIKER',
+    actor: 'Robert Hays'
+  },
+  '80':
+  {
+    file: 'rocky.wav',
+    phrase: '"Yo, Adrian!" ',
+    movie: 'ROCKY, United Artists, 1976',
+    character: 'ROCKY BALBOA',
+    actor: 'Sylvester Stallone'
+  },
+  '81':
+  {
+    file: 'funnygirl.wav',
+    phrase: '"Hello, gorgeous." ',
+    movie: 'FUNNY GIRL, Columbia, 1968',
+    character: 'FANNY BRICE',
+    actor: 'Barbra Streisand'
+  },
+  '82':
+  {
+    file: 'animalhouse.wav',
+    phrase: '"Toga! Toga!"',
+    movie: 'NATIONAL LAMPOON\'S ANIMAL HOUSE, Universal, 1978',
+    character: 'JOHN \'BLUTO\' BLUTARSKY',
+    actor: 'John Belushi'
+  },
+  '83':
+  {
+    file: 'dracula.wav',
+    phrase: '"Listen to them',
+    movie: 'DRACULA, Universal, 1931',
+    character: 'COUNT DRACULA',
+    actor: 'Bela Lugosi'
+  },
+  '84':
+  {
+    file: 'kingkong.wav',
+    phrase: '"Oh, no, it wasn\'t the airplanes',
+    movie: 'KING KONG, RKO, 1933',
+    character: 'CARL DENHAM',
+    actor: 'Robert Armstrong'
+  },
+  '85':
+  {
+    file: 'lordoftherings.wav',
+    phrase: '"My precious." ',
+    movie: 'THE LORD OF THE RINGS: THE TWO TOWERS, New Line Cinema, 2002',
+    character: 'GOLLUM',
+    actor: 'Andy Serkis'
+  },
+  '86':
+  {
+    file: 'dogdayafternoon.wav',
+    phrase: '"Attica! Attica!" ',
+    movie: 'DOG DAY AFTERNOON, Warner Bros., 1975',
+    character: 'SONNY WORTZIK',
+    actor: 'Al Pacino'
+  },
+  '87':
+  {
+    file: '42ndst.wav',
+    phrase: '"Sawyer, you\'re going out a youngster, but you\'ve got to come back a star!" ',
+    movie: ' 42ND STREET, Warner Bros., 1933',
+    character: 'JULIAN MARSH',
+    actor: 'Warner Baxter'
+  },
+  '88':
+  {
+    file: 'ongoldenpond.wav',
+    phrase: '"Listen to me, mister',
+    movie: 'ON GOLDEN POND, Universal, 1981',
+    character: 'ETHEL THAYER',
+    actor: 'Katharine Hepburn'
+  },
+  '89':
+  {
+    file: 'knuterockne.wav',
+    phrase: '"Tell \'em to go out there with all they got and win just one for the Gipper." ',
+    movie: 'KNUTE ROCKNE ALL AMERICAN, Warner Bros., 1940',
+    character: 'KNUTE ROCKNE',
+    actor: 'Pat O\'Brien'
+  },
+  '90':
+  {
+    file: 'goldfinger2.wav',
+    phrase: '"A martini',
+    movie: 'GOLDFINGER, United Artists, 1964',
+    character: 'JAMES BOND',
+    actor: 'Sean Connery'
+  },
+  '91':
+  {
+    file: 'naughty90s.wav',
+    phrase: '"Who\'s on first." ',
+    movie: 'THE NAUGHTY NINETIES, Universal, 1945',
+    character: 'DEXTER',
+    actor: 'Bud Abbott'
+  },
+  '92':
+  {
+    file: 'caddyshack.wav',
+    phrase: '"Cinderella story',
+    movie: 'CADDYSHACK, Orion, 1980',
+    character: 'CARL SPACKLER',
+    actor: 'Bill Murray'
+  },
+  '93':
+  {
+    file: 'auntiemame.wav',
+    phrase: '"Life is a banquet, and most poor suckers are starving to death!" ',
+    movie: 'AUNTIE MAME, Warner Bros., 1958',
+    character: 'MAME DENNIS',
+    actor: 'Rosalind Russell'
+  },
+  '94':
+  {
+    file: 'topgun.wav',
+    phrase: '"I feel the need..."',
+    movie: 'TOP GUN, Paramount, 1986',
+    character: 'LT# PETE \'MAVERICK\' MITCHELL',
+    actor: 'Tom Cruise'
+  },
+  '95':
+  {
+    file: 'deadpoetssociety.wav',
+    phrase: '"Carpe diem',
+    movie: 'DEAD POETS SOCIETY, Touchstone, 1989',
+    character: 'JOHN KEATING',
+    actor: 'Robin Williams'
+  },
+  '96':
+  {
+    file: 'moonstruck.wav',
+    phrase: '"Snap out of it!" ',
+    movie: 'MOONSTRUCK, MGM, 1987',
+    character: 'LORETTA CASTORINI',
+    actor: 'Cher'
+  },
+  '97':
+  {
+    file: 'yankeedoodledandy.wav',
+    phrase: '"(Ladies and Gentlemen), My mother thanks you',
+    movie: 'YANKEE DOODLE DANDY, Warner Bros., 1942',
+    character: 'GEORGE M# COHAN',
+    actor: 'James Cagney'
+  },
+  '98':
+  {
+    file: 'dirtydancing.wav',
+    phrase: '"Nobody puts Baby in a corner." ',
+    movie: 'DIRTY DANCING, Artisan, 1987',
+    character: 'JOHNNY CASTLE',
+    actor: 'Patrick Swayze'
+  },
+  '99':
+  {
+    file: 'wizardofoz3.wav',
+    phrase: '"I\'ll get you, my pretty, and your little dog, too!"',
+    movie: ' THE WIZARD OF OZ, MGM, 1939',
+    character: 'THE WICKED WITCH OF THE WEST',
+    actor: 'Margaret Hamilton'
+  },
+  '100':
+  {
+    file: 'titanic.wav',
+    phrase: '"I\'m',
+    movie: 'TITANIC, Paramount/Twentieth Century Fox, 1997',
+    character: 'JACK DAWSON',
+    actor: 'Leonardo DiCaprio'
+  }
+}
