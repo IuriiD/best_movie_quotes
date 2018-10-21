@@ -48,7 +48,7 @@ const quotes = {
   },
   "7": {
     file: "sunsetblvd.wav",
-    phrase: "All right, Mr",
+    phrase: "All right, Mr. DeMille, I'm ready for my close-up",
     movie: "SUNSET BOULEVARD, Paramount, 1950",
     character: "NORMA DESMOND",
     actor: "Gloria Swanson"
@@ -62,7 +62,7 @@ const quotes = {
   },
   "9": {
     file: "allabouteve.wav",
-    phrase: "Fasten your seatbelts",
+    phrase: "Fasten your seatbelts. It's going to be a bumpy night",
     movie: "ALL ABOUT EVE, Twentieth Century Fox, 1950",
     character: "MARGO CHANNING",
     actor: "Bette Davis"
@@ -104,7 +104,7 @@ const quotes = {
   },
   "15": {
     file: "etth.wav",
-    phrase: "E.T",
+    phrase: "E.T. phone home",
     movie: "E.T.: THE EXTRA-TERRESTRIAL, Universal, 1982",
     character: "E.T.",
     actor: "voice of Joe Welsh"
@@ -153,7 +153,7 @@ const quotes = {
   },
   "22": {
     file: "drno.wav",
-    phrase: "Bond",
+    phrase: "Bond. James Bond",
     movie: "DR. NO, United Artists, 1962",
     character: "JAMES BOND",
     actor: "Sean Connery"
@@ -195,7 +195,7 @@ const quotes = {
   },
   "28": {
     file: "casablanca3.wav",
-    phrase: "Play it, Sam",
+    phrase: "Play it, Sam. Play 'As Time Goes By",
     movie: "CASABLANCA, Warner Bros., 1942",
     character: "ILSA LASZLO",
     actor: "Ingrid Bergman"
@@ -353,7 +353,7 @@ const quotes = {
   },
   "50": {
     file: "apollo13.wav",
-    phrase: "Houston, we have a problem.",
+    phrase: "Houston, we have a problem",
     movie: "APOLLO 13, Universal, 1995",
     character: "JIM LOVELL",
     actor: "Tom Hanks"
@@ -502,7 +502,7 @@ const quotes = {
   },
   "71": {
     file: "jazzsinger.wav",
-    phrase: "Wait a minute, wait a minute",
+    phrase: "Wait a minute, wait a minute. You ain't heard nothin' yet!",
     movie: "THE JAZZ SINGER, Warner Bros., 1927",
     character: "JAKIE RABINOWITZ/JACK ROBIN",
     actor: "Al Jolson"
@@ -768,12 +768,107 @@ app.intent('random.quote', (conv) => {
 });
 
 app.intent('smalltalk.greetings.hello', (conv) => {
-  const relevantQuotesKeys = ['10', '80', '81'];
+  const relevantQuotesKeys = ['10', '80', '81', '8', '20', '49', '52', '61', '63', '66', '68'];
   const ssml = randomQuote(quotes, relevantQuotesKeys);
   console.log(`SSML: ${ssml}`);
   conv.ask(ssml);
 });
 
+
+app.intent('smalltalk.greetings.whatsup', (conv) => {
+    const relevantQuotesKeys = ['1', '44', '50'];
+  const ssml = randomQuote(quotes, relevantQuotesKeys);
+  console.log(`SSML: ${ssml}`);
+  conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.greetings.whatcanyoudo', (conv) => {
+    const relevantQuotesKeys = ['2', '30'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.greetings.whereareyou', (conv) => {
+    const relevantQuotesKeys = ['4', '41', '50'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('default.fallback', (conv) => {
+    const relevantQuotesKeys = ['8', '11', '34', '50', '55', '88'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.greetings.goodmorning', (conv) => {
+    const relevantQuotesKeys = ['12'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.whatislove', (conv) => {
+    const relevantQuotesKeys = ['13'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.whatisit', (conv) => {
+    const relevantQuotesKeys = ['14'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.agent.acquaintance', (conv) => {
+    const relevantQuotesKeys = ['16', '22', '63', '65', '68', '75', '100'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.greetings.how_are_you', (conv) => {
+    const relevantQuotesKeys = ['19', '30', '38', '40', '41', '44', '53'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.greetings.bye', (conv) => {
+    const relevantQuotesKeys = ['37', '47', '61', '76'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.agent.my_friend', (conv) => {
+    const relevantQuotesKeys = ['56', '58', '63'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
+
+
+app.intent('smalltalk.whatislife', (conv) => {
+    const relevantQuotesKeys = ['93'];
+const ssml = randomQuote(quotes, relevantQuotesKeys);
+console.log(`SSML: ${ssml}`);
+conv.ask(ssml);
+});
 
 // Cloud Functions for Firebase handler for HTTPS POST requests.
 // https://developers.google.com/actions/dialogflow/fulfillment#building_fulfillment_responses
